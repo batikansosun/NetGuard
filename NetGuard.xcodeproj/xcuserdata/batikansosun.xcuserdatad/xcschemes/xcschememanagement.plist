@@ -7,7 +7,30 @@
 		<key>NetGuard.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>NetGuardDemo.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A07A9B4C25BE04F300F47C8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A07A9B6125BE04F500F47C8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A07A9B6C25BE04F600F47C8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

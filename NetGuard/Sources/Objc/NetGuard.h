@@ -5,8 +5,19 @@
 //  Created by Batıkan SOSUN on 24.01.2021.
 //
 
-#import <Foundation/Foundation.h>
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
 
+#import "NetGuardEngineStarter.h"
 //! Project version number for NetGuard.
 FOUNDATION_EXPORT double NetGuardVersionNumber;
 
