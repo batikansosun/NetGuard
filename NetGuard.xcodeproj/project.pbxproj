@@ -35,6 +35,9 @@
 		A0CD409C25BE092C00C0B5CC /* NetGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07A9AF825BE029200F47C8D /* NetGuard.framework */; };
 		A0E51C8625BF127700E4DC0D /* NetGuardEngineStarter.h in Headers */ = {isa = PBXBuildFile; fileRef = A0E51C8425BF127700E4DC0D /* NetGuardEngineStarter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0E51C8725BF127700E4DC0D /* NetGuardEngineStarter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E51C8525BF127700E4DC0D /* NetGuardEngineStarter.m */; };
+		A0E51CB825BF563D00E4DC0D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CB725BF563D00E4DC0D /* LICENSE */; };
+		A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CBE25BF56DB00E4DC0D /* .gitignore */; };
+		A0E51CC625BF57BB00E4DC0D /* NetGuard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		A07A9B7325BE04F600F47C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E51C8425BF127700E4DC0D /* NetGuardEngineStarter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetGuardEngineStarter.h; sourceTree = "<group>"; };
 		A0E51C8525BF127700E4DC0D /* NetGuardEngineStarter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetGuardEngineStarter.m; sourceTree = "<group>"; };
+		A0E51CB725BF563D00E4DC0D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		A0E51CBE25BF56DB00E4DC0D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = NetGuard.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +246,9 @@
 		A07A9B4E25BE04F300F47C8D /* NetGuardDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */,
+				A0E51CBE25BF56DB00E4DC0D /* .gitignore */,
+				A0E51CB725BF563D00E4DC0D /* LICENSE */,
 				A07A9B4F25BE04F300F47C8D /* AppDelegate.swift */,
 				A07A9B5125BE04F300F47C8D /* SceneDelegate.swift */,
 				A07A9B5325BE04F300F47C8D /* ViewController.swift */,
@@ -477,8 +486,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E51CC625BF57BB00E4DC0D /* NetGuard.podspec in Resources */,
+				A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */,
 				A07A9B5C25BE04F500F47C8D /* LaunchScreen.storyboard in Resources */,
 				A07A9B5925BE04F500F47C8D /* Assets.xcassets in Resources */,
+				A0E51CB825BF563D00E4DC0D /* LICENSE in Resources */,
 				A07A9B5725BE04F300F47C8D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
