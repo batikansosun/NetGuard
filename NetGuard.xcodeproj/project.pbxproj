@@ -38,6 +38,7 @@
 		A0E51CB825BF563D00E4DC0D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CB725BF563D00E4DC0D /* LICENSE */; };
 		A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CBE25BF56DB00E4DC0D /* .gitignore */; };
 		A0E51CC625BF57BB00E4DC0D /* NetGuard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */; };
+		A0E51CCD25BF5B2D00E4DC0D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CCC25BF5B2D00E4DC0D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		A0E51CB725BF563D00E4DC0D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		A0E51CBE25BF56DB00E4DC0D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = NetGuard.podspec; sourceTree = SOURCE_ROOT; };
+		A0E51CCC25BF5B2D00E4DC0D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 		A07A9B4E25BE04F300F47C8D /* NetGuardDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A0E51CCC25BF5B2D00E4DC0D /* README.md */,
 				A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */,
 				A0E51CBE25BF56DB00E4DC0D /* .gitignore */,
 				A0E51CB725BF563D00E4DC0D /* LICENSE */,
@@ -489,6 +492,7 @@
 				A0E51CC625BF57BB00E4DC0D /* NetGuard.podspec in Resources */,
 				A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */,
 				A07A9B5C25BE04F500F47C8D /* LaunchScreen.storyboard in Resources */,
+				A0E51CCD25BF5B2D00E4DC0D /* README.md in Resources */,
 				A07A9B5925BE04F500F47C8D /* Assets.xcassets in Resources */,
 				A0E51CB825BF563D00E4DC0D /* LICENSE in Resources */,
 				A07A9B5725BE04F300F47C8D /* Main.storyboard in Resources */,
