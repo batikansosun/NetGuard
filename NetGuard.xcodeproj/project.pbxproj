@@ -43,6 +43,7 @@
 		A0E51CFF25C0ACFB00E4DC0D /* NetGuard-SS3.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CFC25C0ACFB00E4DC0D /* NetGuard-SS3.png */; };
 		A0E51D0025C0ACFB00E4DC0D /* NetGuard-SS1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CFD25C0ACFB00E4DC0D /* NetGuard-SS1.png */; };
 		A0E51D0125C0ACFB00E4DC0D /* NetGuard-SS2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CFE25C0ACFB00E4DC0D /* NetGuard-SS2.png */; };
+		A0E51D0825C0C2D500E4DC0D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51D0725C0C2D500E4DC0D /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		A0E51CFC25C0ACFB00E4DC0D /* NetGuard-SS3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NetGuard-SS3.png"; sourceTree = "<group>"; };
 		A0E51CFD25C0ACFB00E4DC0D /* NetGuard-SS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NetGuard-SS1.png"; sourceTree = "<group>"; };
 		A0E51CFE25C0ACFB00E4DC0D /* NetGuard-SS2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NetGuard-SS2.png"; sourceTree = "<group>"; };
+		A0E51D0725C0C2D500E4DC0D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 				A0E51CCC25BF5B2D00E4DC0D /* README.md */,
 				A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */,
 				A0E51CBE25BF56DB00E4DC0D /* .gitignore */,
+				A0E51D0725C0C2D500E4DC0D /* logo.png */,
 				A0E51CB725BF563D00E4DC0D /* LICENSE */,
 				A0E51CF625C0AA4B00E4DC0D /* SS */,
 				A07A9B4F25BE04F300F47C8D /* AppDelegate.swift */,
@@ -512,6 +515,7 @@
 			files = (
 				A0E51CC625BF57BB00E4DC0D /* NetGuard.podspec in Resources */,
 				A0E51D0025C0ACFB00E4DC0D /* NetGuard-SS1.png in Resources */,
+				A0E51D0825C0C2D500E4DC0D /* logo.png in Resources */,
 				A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */,
 				A07A9B5C25BE04F500F47C8D /* LaunchScreen.storyboard in Resources */,
 				A0E51CFF25C0ACFB00E4DC0D /* NetGuard-SS3.png in Resources */,
