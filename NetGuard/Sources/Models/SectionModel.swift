@@ -30,15 +30,15 @@ enum SectionModelType:CustomStringConvertible {
     var description: String{
         switch self {
         case .summary:
-            return "Summary"
+            return NSLocalizedString("Summary", comment: "")
         case .requestHeader:
-            return "Request Header Details"
+            return NSLocalizedString("Request Header Details", comment: "")
         case .requestBody:
-            return "Request Body Details"
+            return NSLocalizedString("Request Body Details", comment: "")
         case .responseHeader:
-            return "Response Header Details"
+            return NSLocalizedString("Response Header Details", comment: "")
         case .responseBody:
-            return "Response Body Details"
+            return NSLocalizedString("Response Body Details", comment: "")
         }
     }
     

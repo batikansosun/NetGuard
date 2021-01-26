@@ -10,7 +10,7 @@ import UIKit
 
 public class NetGuard: NSObject{
     
-    @objc public static var ignoredHosts: [String] {
+    @objc public static var blackListHosts: [String] {
         get { return NetGuardHTTPProtocol.blacklistHosts }
         set { NetGuardHTTPProtocol.blacklistHosts = newValue }
     }

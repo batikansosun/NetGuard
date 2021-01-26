@@ -243,11 +243,11 @@ extension RequestModel{
     var summary:NSMutableAttributedString{
         let final = NSMutableAttributedString()
         let request = self
-        let url = NSMutableAttributedString().fontBold15("Request URL ").font14(request.url + "\n")
-        let method = NSMutableAttributedString().fontBold15("Request HTTP Method ").font14(request.method + "\n")
-        let responseCode = NSMutableAttributedString().fontBold15("Request HTTP Code ").font14((request.code != 0 ? "\(request.code)" : "-") + "\n")
-        let requestStartTime = NSMutableAttributedString().fontBold15("Request Start Time ").font14((request.date.getStrDate() ?? "-" + "\n") + "\n")
-        let duration = NSMutableAttributedString().fontBold15("Request Time Duration ").font14(request.duration?.formattedMilliseconds() ?? "-" + "\n")
+        let url = NSMutableAttributedString().fontBold15(NSLocalizedString("Request URL ", comment: "")).font14(request.url + "\n")
+        let method = NSMutableAttributedString().fontBold15(NSLocalizedString("Request HTTP Method ", comment: "")).font14(request.method + "\n")
+        let responseCode = NSMutableAttributedString().fontBold15(NSLocalizedString("Request HTTP Code ", comment: "")).font14((request.code != 0 ? "\(request.code)" : "-") + "\n")
+        let requestStartTime = NSMutableAttributedString().fontBold15(NSLocalizedString("Request Start Time ", comment: "")).font14((request.date.getStrDate() ?? "-" + "\n") + "\n")
+        let duration = NSMutableAttributedString().fontBold15(NSLocalizedString("Request Time Duration ", comment: "")).font14(request.duration?.formattedMilliseconds() ?? "-" + "\n")
         for attrStr in [url, method, responseCode, requestStartTime, duration]{
             final.append(attrStr)
         }

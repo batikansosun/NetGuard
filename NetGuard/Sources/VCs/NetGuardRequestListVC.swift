@@ -84,7 +84,8 @@ class NetGuardRequestListVC: BaseVC {
         searchController = UISearchController(searchResultsController: nil)
         searchController?.searchResultsUpdater = self
         searchController?.obscuresBackgroundDuringPresentation = false
-        searchController?.searchBar.placeholder = "Search request by url"
+        searchController?.searchBar.placeholder = NSLocalizedString("Search request by url", comment: "")
+        searchController?.searchBar.tintColor = .black
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {
@@ -99,7 +100,7 @@ class NetGuardRequestListVC: BaseVC {
         navigationItem.rightBarButtonItem = buttonLeft
         navigationItem.leftBarButtonItem = buttonRight
         navigationController?.navigationBar.tintColor = .generic
-        title = "NetGuard"
+        title = NSLocalizedString("NetGuard", comment: "")
     }
     
     func openRequestDetailVC(model:RequestModel) {

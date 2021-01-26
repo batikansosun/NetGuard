@@ -39,6 +39,10 @@
 		A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CBE25BF56DB00E4DC0D /* .gitignore */; };
 		A0E51CC625BF57BB00E4DC0D /* NetGuard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */; };
 		A0E51CCD25BF5B2D00E4DC0D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CCC25BF5B2D00E4DC0D /* README.md */; };
+		A0E51CE325C0A1B500E4DC0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CE525C0A1B500E4DC0D /* Localizable.strings */; };
+		A0E51CEE25C0AA3F00E4DC0D /* NetGuard-SS1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CEB25C0AA3F00E4DC0D /* NetGuard-SS1.png */; };
+		A0E51CEF25C0AA3F00E4DC0D /* NetGuard-SS2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CEC25C0AA3F00E4DC0D /* NetGuard-SS2.png */; };
+		A0E51CF025C0AA3F00E4DC0D /* NetGuard-SS3.png in Resources */ = {isa = PBXBuildFile; fileRef = A0E51CED25C0AA3F00E4DC0D /* NetGuard-SS3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +115,12 @@
 		A0E51C8525BF127700E4DC0D /* NetGuardEngineStarter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetGuardEngineStarter.m; sourceTree = "<group>"; };
 		A0E51CB725BF563D00E4DC0D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		A0E51CBE25BF56DB00E4DC0D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
-		A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = NetGuard.podspec; sourceTree = SOURCE_ROOT; };
+		A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = NetGuard.podspec; sourceTree = SOURCE_ROOT; };
 		A0E51CCC25BF5B2D00E4DC0D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		A0E51CE425C0A1B500E4DC0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A0E51CEB25C0AA3F00E4DC0D /* NetGuard-SS1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NetGuard-SS1.png"; sourceTree = "<group>"; };
+		A0E51CEC25C0AA3F00E4DC0D /* NetGuard-SS2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NetGuard-SS2.png"; sourceTree = "<group>"; };
+		A0E51CED25C0AA3F00E4DC0D /* NetGuard-SS3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NetGuard-SS3.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +260,7 @@
 				A0E51CC525BF57BB00E4DC0D /* NetGuard.podspec */,
 				A0E51CBE25BF56DB00E4DC0D /* .gitignore */,
 				A0E51CB725BF563D00E4DC0D /* LICENSE */,
+				A0E51CF625C0AA4B00E4DC0D /* SS */,
 				A07A9B4F25BE04F300F47C8D /* AppDelegate.swift */,
 				A07A9B5125BE04F300F47C8D /* SceneDelegate.swift */,
 				A07A9B5325BE04F300F47C8D /* ViewController.swift */,
@@ -310,8 +319,19 @@
 				A07A9B1B25BE039B00F47C8D /* NetGuard.swift */,
 				A07A9B2125BE039B00F47C8D /* NetGuardHTTPProtocol.swift */,
 				A07A9AFC25BE029200F47C8D /* Info.plist */,
+				A0E51CE525C0A1B500E4DC0D /* Localizable.strings */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		A0E51CF625C0AA4B00E4DC0D /* SS */ = {
+			isa = PBXGroup;
+			children = (
+				A0E51CEB25C0AA3F00E4DC0D /* NetGuard-SS1.png */,
+				A0E51CEC25C0AA3F00E4DC0D /* NetGuard-SS2.png */,
+				A0E51CED25C0AA3F00E4DC0D /* NetGuard-SS3.png */,
+			);
+			path = SS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E51CE325C0A1B500E4DC0D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +511,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E51CC625BF57BB00E4DC0D /* NetGuard.podspec in Resources */,
+				A0E51CEF25C0AA3F00E4DC0D /* NetGuard-SS2.png in Resources */,
+				A0E51CEE25C0AA3F00E4DC0D /* NetGuard-SS1.png in Resources */,
+				A0E51CF025C0AA3F00E4DC0D /* NetGuard-SS3.png in Resources */,
 				A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */,
 				A07A9B5C25BE04F500F47C8D /* LaunchScreen.storyboard in Resources */,
 				A0E51CCD25BF5B2D00E4DC0D /* README.md in Resources */,
@@ -612,6 +636,14 @@
 				A07A9B5B25BE04F500F47C8D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A0E51CE525C0A1B500E4DC0D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0E51CE425C0A1B500E4DC0D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

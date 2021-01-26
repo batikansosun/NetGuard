@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  NetGuard
+
+  Created by Batıkan SOSUN on 26.01.2021.
+  
+*/
+"Request Time Duration " = "Request Time Duration ";
+"Request Start Time " = "Request Start Time ";
+"Request HTTP Code " = "Request HTTP Code ";
+"Request HTTP Method " = "Request HTTP Method ";
+"Request URL " = "Request URL ";
+"Summary" = "Summary";
+"Request Header Details" = "Request Header Details";
+"Request Body Details" = "Request Body Details";
+"Response Header Details" = "Response Header Details";
+"Response Body Details" = "Response Body Details";
+"Search request by url" = "Search request by url";
+"NetGuard" = "NetGuard";

@@ -46,7 +46,7 @@ class RequestDetailVC: BaseVC {
         let buttonRight = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionRequest))
         buttonRight.tintColor = .black
         navigationItem.rightBarButtonItem = buttonRight
-        
+        navigationController?.navigationBar.tintColor = .black
         self.view.addSubview(tableViewList)
         tableViewList.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableViewList.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
