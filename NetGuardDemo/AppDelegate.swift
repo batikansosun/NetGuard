@@ -13,10 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
         NetGuard().loadNetGuard()
-        
+        NetGuard.shakeEnabled = false
+        NetGuard().showNetGuard()
+        NetGuard.blackListHosts = ["example.com"]
         return true
     }
 
