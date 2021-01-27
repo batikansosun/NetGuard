@@ -194,7 +194,16 @@
 		A07A9AFA25BE029200F47C8D /* NetGuard */ = {
 			isa = PBXGroup;
 			children = (
-				A0E51CA725BF478600E4DC0D /* Sources */,
+				A07A9B3E25BE03AE00F47C8D /* Cells */,
+				A07A9B4025BE03AE00F47C8D /* Models */,
+				A07A9B3D25BE03AE00F47C8D /* Utils */,
+				A07A9B3F25BE03AE00F47C8D /* VCs */,
+				A07A9B4225BE03DA00F47C8D /* Extensions */,
+				A0E51C9725BF133A00E4DC0D /* Objc */,
+				A07A9B1B25BE039B00F47C8D /* NetGuard.swift */,
+				A07A9B2125BE039B00F47C8D /* NetGuardHTTPProtocol.swift */,
+				A07A9AFC25BE029200F47C8D /* Info.plist */,
+				A0E51CE525C0A1B500E4DC0D /* Localizable.strings */,
 			);
 			path = NetGuard;
 			sourceTree = "<group>";
@@ -308,23 +317,6 @@
 				A07A9AFB25BE029200F47C8D /* NetGuard.h */,
 			);
 			path = Objc;
-			sourceTree = "<group>";
-		};
-		A0E51CA725BF478600E4DC0D /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				A07A9B3E25BE03AE00F47C8D /* Cells */,
-				A07A9B4025BE03AE00F47C8D /* Models */,
-				A07A9B3D25BE03AE00F47C8D /* Utils */,
-				A07A9B3F25BE03AE00F47C8D /* VCs */,
-				A07A9B4225BE03DA00F47C8D /* Extensions */,
-				A0E51C9725BF133A00E4DC0D /* Objc */,
-				A07A9B1B25BE039B00F47C8D /* NetGuard.swift */,
-				A07A9B2125BE039B00F47C8D /* NetGuardHTTPProtocol.swift */,
-				A07A9AFC25BE029200F47C8D /* Info.plist */,
-				A0E51CE525C0A1B500E4DC0D /* Localizable.strings */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		A0E51CF625C0AA4B00E4DC0D /* SS */ = {
@@ -786,7 +778,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetGuard/Sources/Info.plist;
+				INFOPLIST_FILE = NetGuard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -815,7 +807,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetGuard/Sources/Info.plist;
+				INFOPLIST_FILE = NetGuard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
