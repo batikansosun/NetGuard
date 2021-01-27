@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author             = { "Batikan Sosun" => "batikansosun@gmail.com" }
   s.social_media_url   = "https://twitter.com/batikansosun"
   s.ios.deployment_target = "10.0"
-  s.source       = { :git => "https://github.com/batikansosun/NetGuard.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/batikansosun/NetGuard.git", :tag => "#{s.version}" }
   s.source_files     = "NetGuard", "NetGuard/**/*.{h,m,swift}"
   s.swift_version = "5.0"
 end
