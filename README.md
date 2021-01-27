@@ -1,14 +1,16 @@
-# NetGuard
 
-[![Pod version](https://img.shields.io/badge/pod-v1.0-green)](https://cocoapods.org/pods/NetGuard)
-[![Swift Version](https://img.shields.io/badge/Swift-v5-red)](https://cocoapods.org/pods/NetGuard)
-[![LICENSE](https://img.shields.io/badge/LICENSE-MIT-lightgrey)](https://github.com/batikansosun/NetGuard/LICENSE)
-[![LICENSE](https://img.shields.io/badge/Platform-iOS-yellowgreen)](https://github.com/batikansosun/NetGuard/LICENSE)
-[![TWITTER](https://img.shields.io/badge/Twitter%20Support-%40batikansosun-yellow)](https://github.com/batikansosun/NetGuard/LICENSE)
-[![Pod version](https://img.shields.io/badge/Cocoapods-compatible-green)](https://cocoapods.org/pods/NetGuard)
+<p align="center">
+    <img width="400" src="https://github.com/batikansosun/NetGuard/blob/main/NetGuardDemo/logo.png?raw=true">
+</p>
 
-
-
+<p align="center">
+    <a title="Pod Version" href="https://cocoapods.org/pods/NetGuard"><img src="https://img.shields.io/badge/pod-v1.0-green"/></a>
+    <a title="Swift Version" href="https://cocoapods.org/pods/NetGuard"><img src="https://img.shields.io/badge/Swift-v5-red"/></a>
+    <a title="MIT LICENSE" href="https://github.com/batikansosun/NetGuard/LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-lightgrey"/></a>
+    <a title="Support" href="https://twitter.com/batikansosun"><img src="https://img.shields.io/badge/Twitter%20Support-%40batikansosun-yellow"/></a>
+    <a title="Platform" href=""><img src="https://img.shields.io/badge/Platform-iOS-yellowgreen"/></a>
+    <a title="Cocoapods" href="https://cocoapods.org/pods/NetGuard"><img src="https://img.shields.io/badge/Cocoapods-compatible-green"/></a>
+</p>
 
 ## Preview
 ![NetGuard](https://github.com/batikansosun/NetGuard/blob/main/NetGuardDemo/SS/NetGuard-SS3.png?raw=true)
