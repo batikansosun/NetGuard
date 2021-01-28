@@ -71,7 +71,7 @@ NetGuard.blackListHosts = ["example.com"]
 ```
 ## Contributing
 - If you **found a bug**, please open an issue.
-- If you **have a feature request**, please open an issue.
+- If you **have a feature request**, please start a [new discussion](https://github.com/batikansosun/NetGuard/discussions/new).
 - If you **want to contribute**, please submit a pull request.
 
 **Made with ❤️ by [Batikan Sosun](https://github.com/batikansosun)**
