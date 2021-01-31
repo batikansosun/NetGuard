@@ -10,9 +10,9 @@
 @implementation NetGuardEngineStarter
 + (void)load{
     NSString *methodName = @"netGuardEngineStarter";
-    SEL implementNetfoxSelector = NSSelectorFromString(methodName);
-    if ([NSURLSessionConfiguration respondsToSelector:implementNetfoxSelector]){
-        [NSURLSessionConfiguration performSelector:implementNetfoxSelector];
+    SEL implementNetGuardSelector = NSSelectorFromString(methodName);
+    if ([NSURLSessionConfiguration respondsToSelector:implementNetGuardSelector]){
+        [NSURLSessionConfiguration performSelector:implementNetGuardSelector];
     }
 }
 @end
