@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "NetGuard"
-  s.version      = "1.2"
+  s.version      = "1.3"
   s.summary      = "Network debugging guard"
   s.description  = <<-DESC
-    An excellent network debugger. Start network debugging with NetGuard you never miss any request.
+    A lightweight network debugger. Start network debugging with NetGuard you never miss any request.
   DESC
   s.homepage     = "https://github.com/batikansosun/NetGuard"
   s.license      = { :type => "MIT", :file => "LICENSE" }
