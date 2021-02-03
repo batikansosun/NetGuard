@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NetGuard"
-  s.version      = "1.3"
+  s.version      = "1.4"
   s.summary      = "Network debugging guard"
   s.description  = <<-DESC
     A lightweight network debugger. Start network debugging with NetGuard you never miss any request.

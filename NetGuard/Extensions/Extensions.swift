@@ -97,6 +97,13 @@ extension UILabel{
     }
 }
 
+extension UIView{
+    convenience init(autoLayout:Bool) {
+        self.init(frame:.zero)
+        self.translatesAutoresizingMaskIntoConstraints = !autoLayout
+    }
+}
+
 extension UITextView{
     convenience init(forAutoLayout:Bool = true) {
         self.init(frame:.zero)
@@ -275,11 +282,11 @@ extension RequestModel{
     }
     
     var dataResponseAttrText:NSMutableAttributedString{
-        let text = NSMutableAttributedString().font14(self.dataResponse.convertToStr)
+        let text = NSMutableAttributedString().font14(self.dataResponse?.prettyPrintedJSONString ?? "")
         return text
     }
     var dataRequestAttrText:NSMutableAttributedString{
-        let text = NSMutableAttributedString().font14(self.httpBody.convertToStr)
+        let text = NSMutableAttributedString().font14(self.httpBody?.prettyPrintedJSONString ?? "")
         return text
     }
 }
@@ -300,6 +307,16 @@ extension Optional where Wrapped == Data{
         return ""
     }
     
+}
+
+extension Data {
+    var prettyPrintedJSONString: String? {
+        guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
+              let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
+              let prettyPrintedString = String(data: data, encoding: .utf8) else { return nil }
+
+        return prettyPrintedString
+    }
 }
 
 extension Double {
