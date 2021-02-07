@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         sessionConfiguration.httpAdditionalHeaders = ["Accept-Language": "en","Content-Type": "application/json; charset=UTF-8"]
         
         
-        var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
+        var request = URLRequest(url: URL(string: "http://jsonplaceholder.typicode.com/posts")!)
         request.httpMethod = "POST"
         request.httpBody = "{\"userId\": 1,\"id\": 2,\"title\": \"qui est esse\",\"body\": \"i\"}".data(using: .utf8)
         
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         sessionConfiguration.httpAdditionalHeaders = ["Accept-Language": "en","Content-Type": "plain/text"]
         
         
-        var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/tod")!)
+        var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/to/posts/4")!)
         request.httpMethod = "GET"
         
         let session = URLSession.init(configuration: sessionConfiguration)

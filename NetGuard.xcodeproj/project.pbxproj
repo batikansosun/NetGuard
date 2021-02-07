@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A05D8D8925D0609F0082C3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05D8D8825D0609F0082C3EB /* Assets.xcassets */; };
 		A07A9B0225BE029200F47C8D /* NetGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07A9AF825BE029200F47C8D /* NetGuard.framework */; };
 		A07A9B0725BE029200F47C8D /* NetGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A9B0625BE029200F47C8D /* NetGuardTests.swift */; };
 		A07A9B0925BE029200F47C8D /* NetGuard.h in Headers */ = {isa = PBXBuildFile; fileRef = A07A9AFB25BE029200F47C8D /* NetGuard.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A05D8D8825D0609F0082C3EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A07A9AF825BE029200F47C8D /* NetGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07A9AFB25BE029200F47C8D /* NetGuard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetGuard.h; sourceTree = "<group>"; };
 		A07A9AFC25BE029200F47C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				A07A9B2125BE039B00F47C8D /* NetGuardHTTPProtocol.swift */,
 				A07A9AFC25BE029200F47C8D /* Info.plist */,
 				A0E51CE525C0A1B500E4DC0D /* Localizable.strings */,
+				A05D8D8825D0609F0082C3EB /* Assets.xcassets */,
 			);
 			path = NetGuard;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05D8D8925D0609F0082C3EB /* Assets.xcassets in Resources */,
 				A0E51CE325C0A1B500E4DC0D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -786,7 +790,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.batikan.NetGuard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -816,7 +820,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.batikan.NetGuard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

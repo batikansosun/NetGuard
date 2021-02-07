@@ -36,8 +36,8 @@ class RequestListCell: UITableViewCell {
     lazy var labelUrl: UILabel = {
         let l = UILabel(forAutoLayout: true)
         l.textAlignment = .left
-        l.numberOfLines = 2
-        l.lineBreakMode = .byTruncatingTail
+        l.numberOfLines = 4
+        l.lineBreakMode = .byCharWrapping
         l.font = .systemFont(ofSize: 14, weight: .regular)
         l.textColor = .black
         return l
@@ -45,11 +45,17 @@ class RequestListCell: UITableViewCell {
     
     lazy var labelDate: UILabel = {
         let l = UILabel(forAutoLayout: true)
-        l.textAlignment = .center
-        l.numberOfLines = 1
+        l.textAlignment = .left
+        l.numberOfLines = 2
         l.font = .systemFont(ofSize: 10, weight: .regular)
         l.textColor = .gray
         return l
+    }()
+    
+    lazy var viewSeperator: UIView = {
+        let v = UIView(autoLayout: true)
+        v.backgroundColor = UIColor.lightGray
+        return v
     }()
 
     override func awakeFromNib() {
@@ -59,8 +65,6 @@ class RequestListCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        
         backgroundColor = .clear
         contentView.backgroundColor = .clear
     }
@@ -81,37 +85,48 @@ class RequestListCell: UITableViewCell {
         contentView.addSubview(labelDate)
         contentView.addSubview(labelMethod)
         contentView.addSubview(labelHTTPCode)
+        contentView.addSubview(viewSeperator)
         
-        labelHTTPCode.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        labelHTTPCode.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         labelHTTPCode.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        labelHTTPCode.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        labelHTTPCode.widthAnchor.constraint(equalToConstant: 45).isActive = true
         
-        labelMethod.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        labelMethod.bottomAnchor.constraint(equalTo: labelDate.topAnchor, constant: -2).isActive = true
-        labelMethod.leftAnchor.constraint(equalTo: labelHTTPCode.rightAnchor, constant: 10).isActive = true
+        labelMethod.topAnchor.constraint(equalTo: labelHTTPCode.bottomAnchor, constant: 3).isActive = true
+        labelMethod.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
         labelMethod.widthAnchor.constraint(equalToConstant: 45).isActive = true
         
-        labelUrl.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        labelUrl.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10).isActive = true
+        labelUrl.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        labelUrl.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -3).isActive = true
         labelUrl.leftAnchor.constraint(equalTo: labelMethod.rightAnchor, constant: 10).isActive = true
         labelUrl.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
         
-        labelDate.topAnchor.constraint(equalTo: labelHTTPCode.bottomAnchor, constant: 1).isActive = true
+        labelDate.topAnchor.constraint(equalTo: labelMethod.bottomAnchor, constant: 1).isActive = true
         labelDate.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        labelDate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4).isActive = true
-        labelDate.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        labelDate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -3).isActive = true
+        labelDate.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        
+        viewSeperator.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
+        viewSeperator.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 32).isActive = true
+        viewSeperator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        viewSeperator.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
         let screenSize = UIScreen.main.bounds
         let separatorHeight = CGFloat(1.0)
         let additionalSeparator = UIView.init(frame: CGRect(x: 0, y: self.frame.size.height-separatorHeight + 6 , width: screenSize.width, height: separatorHeight))
         additionalSeparator.backgroundColor = UIColor.lightGray
-        self.addSubview(additionalSeparator)
+       // self.addSubview(additionalSeparator)
     }
     
     func loadCell(model:RequestModel){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY/MM/dd HH:mm:ss"
-        labelUrl.text = model.url
+        if let url = URL(string: model.url){
+            let hostAndHttpScheme = (url.scheme ?? "http") + "://" + (url.host ?? "")
+            let urlAttrStr = NSMutableAttributedString().fontBoldGray15(hostAndHttpScheme + " \n")
+            urlAttrStr.append(NSMutableAttributedString().font14(url.path + "\n"))
+            labelUrl.attributedText = urlAttrStr
+        }
+        
         labelMethod.text = model.method
         labelHTTPCode.text = String(model.code)
         labelDate.text = dateFormatter.string(from: model.date)

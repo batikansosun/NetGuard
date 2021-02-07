@@ -207,6 +207,13 @@ extension NSMutableAttributedString {
         return self
     }
     
+    @discardableResult func fontBoldGray15(_ text: String) -> NSMutableAttributedString {
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor:UIColor.lightGray]
+        let boldString = NSMutableAttributedString(string:text, attributes: attrs)
+        append(boldString)
+        return self
+    }
+    
     @discardableResult func font14(_ text: String) -> NSMutableAttributedString {
         let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 14)]
         let normal = NSMutableAttributedString(string:text, attributes: attrs)
