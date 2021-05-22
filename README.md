@@ -39,7 +39,7 @@
 ```ruby
 target 'YourTargetName' do
     use_frameworks!
-    pod 'NetGuard'
+    pod 'NetGuard', :git => 'https://github.com/batikansosun/NetGuard.git', :tag => '1.8'
 end
 ```
 

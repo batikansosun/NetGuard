@@ -289,8 +289,14 @@ extension RequestModel{
     }
     
     var dataResponseAttrText:NSMutableAttributedString{
-        let text = NSMutableAttributedString().font14(self.dataResponse?.prettyPrintedJSONString ?? "")
-        return text
+        if let json = self.dataResponse?.prettyPrintedJSONString {
+            return NSMutableAttributedString().font14(json)
+        }
+        if let htmlOrPlainText = self.dataResponse?.printedNotValidJSONString{
+            return NSMutableAttributedString().font14(htmlOrPlainText)
+        }
+        return NSMutableAttributedString(string: "")
+        
     }
     var dataRequestAttrText:NSMutableAttributedString{
         let text = NSMutableAttributedString().font14(self.httpBody?.prettyPrintedJSONString ?? "")
@@ -323,6 +329,10 @@ extension Data {
               let prettyPrintedString = String(data: data, encoding: .utf8) else { return nil }
 
         return prettyPrintedString
+    }
+    
+    var printedNotValidJSONString: String? {
+        return String(data: self, encoding: .utf8)
     }
 }
 

@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         sessionConfiguration.httpAdditionalHeaders = ["Accept-Language": "en","Content-Type": "plain/text"]
         
         
-        var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/to/posts/4")!)
+        var request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com")!)
         request.httpMethod = "GET"
         
         let session = URLSession.init(configuration: sessionConfiguration)
