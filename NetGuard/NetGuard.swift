@@ -67,11 +67,12 @@ public class NetGuard: NSObject{
         }
     }
     /// shakeEnabled should be false for performing this method
-    public func showNetGuard(){
+    @objc public func showNetGuard(){
         guard !NetGuard.shakeEnabled && NetGuard.enabled else { return }
         NotificationCenter.default.post(name: RequestNotifications.showNetGuardRequestNotification, object: nil)
     }
-    public func loadNetGuard(){
+    
+    @objc public func loadNetGuard(){
         addObserverShowNetGuard()
         NetGuard.enable(true)
     }
