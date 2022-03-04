@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		139341D227D26956001747F0 /* NetGuard-SS4.png in Resources */ = {isa = PBXBuildFile; fileRef = 139341D127D26956001747F0 /* NetGuard-SS4.png */; };
+		13BB300027D254C500BB023D /* RequestLineDetailedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BB2FFF27D254C500BB023D /* RequestLineDetailedVC.swift */; };
 		A05D8D8925D0609F0082C3EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05D8D8825D0609F0082C3EB /* Assets.xcassets */; };
 		A07A9B0225BE029200F47C8D /* NetGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07A9AF825BE029200F47C8D /* NetGuard.framework */; };
 		A07A9B0725BE029200F47C8D /* NetGuardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A9B0625BE029200F47C8D /* NetGuardTests.swift */; };
@@ -79,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		139341D127D26956001747F0 /* NetGuard-SS4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NetGuard-SS4.png"; sourceTree = "<group>"; };
+		13BB2FFF27D254C500BB023D /* RequestLineDetailedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLineDetailedVC.swift; sourceTree = "<group>"; };
 		A05D8D8825D0609F0082C3EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A07A9AF825BE029200F47C8D /* NetGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07A9AFB25BE029200F47C8D /* NetGuard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetGuard.h; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 				A07A9B2325BE039B00F47C8D /* BaseVC.swift */,
 				A07A9B2525BE039B00F47C8D /* NetGuardRequestListVC.swift */,
 				A07A9B1A25BE039B00F47C8D /* RequestDetailVC.swift */,
+				13BB2FFF27D254C500BB023D /* RequestLineDetailedVC.swift */,
 				A07A9B1E25BE039B00F47C8D /* BaseNC.swift */,
 			);
 			path = VCs;
@@ -328,6 +333,7 @@
 				A0E51CFD25C0ACFB00E4DC0D /* NetGuard-SS1.png */,
 				A0E51CFE25C0ACFB00E4DC0D /* NetGuard-SS2.png */,
 				A0E51CFC25C0ACFB00E4DC0D /* NetGuard-SS3.png */,
+				139341D127D26956001747F0 /* NetGuard-SS4.png */,
 			);
 			path = SS;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 				A0E51D0025C0ACFB00E4DC0D /* NetGuard-SS1.png in Resources */,
 				A0E51D0825C0C2D500E4DC0D /* logo.png in Resources */,
 				A0E51CBF25BF56DB00E4DC0D /* .gitignore in Resources */,
+				139341D227D26956001747F0 /* NetGuard-SS4.png in Resources */,
 				A07A9B5C25BE04F500F47C8D /* LaunchScreen.storyboard in Resources */,
 				A0E51CFF25C0ACFB00E4DC0D /* NetGuard-SS3.png in Resources */,
 				A0E51CCD25BF5B2D00E4DC0D /* README.md in Resources */,
@@ -556,6 +563,7 @@
 				A07A9B3525BE039B00F47C8D /* NetGuardRequestListVC.swift in Sources */,
 				A07A9B3825BE039B00F47C8D /* RequestNotifications.swift in Sources */,
 				A07A9B2D25BE039B00F47C8D /* ViewSectionHeader.swift in Sources */,
+				13BB300027D254C500BB023D /* RequestLineDetailedVC.swift in Sources */,
 				A07A9B3025BE039B00F47C8D /* SectionModel.swift in Sources */,
 				A07A9B2F25BE039B00F47C8D /* RequestListCell.swift in Sources */,
 				A07A9B3325BE039B00F47C8D /* BaseVC.swift in Sources */,
@@ -791,7 +799,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.batikan.NetGuard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -823,7 +831,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.batikan.NetGuard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

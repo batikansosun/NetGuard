@@ -28,7 +28,7 @@ public class NetGuard: NSObject{
     /// default value is true
     @objc public static var shakeEnabled = true
     
-    static func enable(_ enable: Bool){
+    static func enable(_ enable: Bool) {
         if enable{
             URLProtocol.registerClass(NetGuardHTTPProtocol.self)
         }else{
@@ -36,7 +36,7 @@ public class NetGuard: NSObject{
         }
     }
     
-    @objc public static func enable(_ enable: Bool, sessionConfiguration: URLSessionConfiguration){
+    @objc public static func enable(_ enable: Bool, sessionConfiguration: URLSessionConfiguration) {
         var urlProtocolClasses = sessionConfiguration.protocolClasses
         let protocolClassNetGuard = NetGuardHTTPProtocol.self
         
@@ -67,17 +67,17 @@ public class NetGuard: NSObject{
         }
     }
     /// shakeEnabled should be false for performing this method
-    @objc public func showNetGuard(){
+    @objc public func showNetGuard() {
         guard !NetGuard.shakeEnabled && NetGuard.enabled else { return }
         NotificationCenter.default.post(name: RequestNotifications.showNetGuardRequestNotification, object: nil)
     }
     
-    @objc public func loadNetGuard(){
+    @objc public func loadNetGuard() {
         addObserverShowNetGuard()
         NetGuard.enable(true)
     }
     
-    func presentNetGuardUI(){
+    func presentNetGuardUI() {
         if let topVC = UIApplication.topViewController(), !topVC.isKind(of: BaseNC.classForCoder()) {
             let vc = NetGuardRequestListVC()
             let nc = BaseNC(rootViewController: vc)

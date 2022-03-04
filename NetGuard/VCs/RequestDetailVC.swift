@@ -7,8 +7,9 @@
 
 import UIKit
 
-class RequestDetailVC: BaseVC {
-    lazy var tableViewList: UITableView = {
+final class RequestDetailVC: BaseVC {
+    var requestModel:RequestModel?
+    private lazy var tableViewList: UITableView = {
         let t = UITableView(style: .plain)
         t.separatorInset = .zero
         t.delegate = self
@@ -21,7 +22,7 @@ class RequestDetailVC: BaseVC {
         return t
     }()
     
-    lazy var sectionList: [SectionModel] = {
+    private lazy var sectionList: [SectionModel] = {
         guard let requestModel = requestModel else { return []}
         
         
@@ -33,15 +34,13 @@ class RequestDetailVC: BaseVC {
         return [summarySection,requestBodySection,responseBodySection,requestHeaderSection,responseHeaderSection]
     }()
     
-    public var requestModel:RequestModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         adjustLayout()
     }
     
-    //MARK: Layout UI
-    func adjustLayout() {
+    private func adjustLayout() {
         title = requestModel?.url
         let buttonRight = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionRequest))
         buttonRight.tintColor = .black
@@ -54,17 +53,24 @@ class RequestDetailVC: BaseVC {
         tableViewList.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
-    //MARK: Actions
-    @objc func actionRequest(){
+    @objc private func actionRequest(){
         let textShare = [requestModel?.exportRequestDetails ?? ""]
         let activityViewController = UIActivityViewController(activityItems: textShare, applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
     
-    func share(text:NSAttributedString){
-        let textShare = [text]
-        let activityViewController = UIActivityViewController(activityItems: textShare, applicationActivities: nil)
-        self.present(activityViewController, animated: true, completion: nil)
+    private func action(text: NSAttributedString, type: DetailButtonActionType){
+        switch type {
+        case .share:
+            let textShare = [text]
+            let activityViewController = UIActivityViewController(activityItems: textShare, applicationActivities: nil)
+            self.present(activityViewController, animated: true, completion: nil)
+        case .detail:
+            let vc = RequestLineDetailedVC()
+            vc.attributedText = NSMutableAttributedString(attributedString: text)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
 }
@@ -82,10 +88,9 @@ extension RequestDetailVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let model = sectionList[section]
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: ViewSectionHeader.identifier) as! ViewSectionHeader
-        view.adjustLayout()
         view.load(section: model)
-        view.pressedButtonCompletion = { detail in
-            self.share(text: detail)
+        view.pressedButtonCompletion = { (detail, type) in
+            self.action(text: detail, type: type)
         }
         return view
     }

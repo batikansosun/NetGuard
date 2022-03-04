@@ -13,6 +13,7 @@
 </p>
 
 ## Preview
+![NetGuard](https://github.com/batikansosun/NetGuard/blob/main/NetGuardDemo/SS/NetGuard-SS4.png?raw=true)
 ![NetGuard](https://github.com/batikansosun/NetGuard/blob/main/NetGuardDemo/SS/NetGuard-SS3.png?raw=true)
 ![NetGuard](https://github.com/batikansosun/NetGuard/blob/main/NetGuardDemo/SS/NetGuard-SS2.png?raw=true)
 ![NetGuard](https://github.com/batikansosun/NetGuard/blob/main/NetGuardDemo/SS/NetGuard-SS1.png?raw=true)
@@ -39,7 +40,7 @@
 ```ruby
 target 'YourTargetName' do
     use_frameworks!
-    pod 'NetGuard', :git => 'https://github.com/batikansosun/NetGuard.git', :tag => '1.9'
+    pod 'NetGuard', :git => 'https://github.com/batikansosun/NetGuard.git', :tag => '2.0'
 end
 ```
 
@@ -52,6 +53,14 @@ All you need is to call the "loadNetGuard" method in "didFinishLaunchingWithOpti
       return true
   }
 ```
+
+```objective-c
+//@import NetGuard;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[NetGuard new] loadNetGuard];
+}
+```
+
 ### Parameters
 'enabled' default value is true. You don't need to setting up to 'true'. 'false' value disables network watching.
 ```swift

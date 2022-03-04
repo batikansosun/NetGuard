@@ -7,9 +7,9 @@
 
 import UIKit
 
-class NetGuardRequestListVC: BaseVC {
+final class NetGuardRequestListVC: BaseVC {
     
-    lazy var tableViewList: UITableView = {
+    private lazy var tableViewList: UITableView = {
         let t = UITableView(style: .plain)
         t.separatorInset = .zero
         t.separatorStyle = .none
@@ -21,10 +21,9 @@ class NetGuardRequestListVC: BaseVC {
         t.register(RequestListCell.self, forCellReuseIdentifier: RequestListCell.identifier)
         return t
     }()
-    
-    var searchController:UISearchController?
-    
-    var searchText = ""{
+    private var filteredRequests: [RequestModel] = []
+    private var searchController:UISearchController?
+    private var searchText = "" {
         didSet{
             if searchText.isEmpty {
                 filteredRequests = StorageManager.shared.requests
@@ -36,10 +35,9 @@ class NetGuardRequestListVC: BaseVC {
             tableViewList.reloadData()
         }
     }
-    var filteredRequests: [RequestModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         settingNavigationBarAndSearchController()
         NotificationCenter.default.addObserver(forName: RequestNotifications.fetchNewRequestNotification, object: nil, queue: nil) { [weak self] (notification) in
@@ -58,9 +56,7 @@ class NetGuardRequestListVC: BaseVC {
         }
     }
     
-    
-    //MARK: Layout UI
-    func adjustLayout() {
+    private func adjustLayout() {
         self.view.addSubview(tableViewList)
         tableViewList.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableViewList.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -68,19 +64,17 @@ class NetGuardRequestListVC: BaseVC {
         tableViewList.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
-    //MARK: Actions
-    @objc func close(){
+    @objc private func close(){
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func clearRequests(){
+    @objc private func clearRequests(){
         StorageManager.shared.clearRequests()
         filteredRequests = StorageManager.shared.requests
         tableViewList.reloadData()
     }
     
-    func settingNavigationBarAndSearchController(){
-        
+    private func settingNavigationBarAndSearchController(){
         searchController = UISearchController(searchResultsController: nil)
         searchController?.searchResultsUpdater = self
         searchController?.obscuresBackgroundDuringPresentation = false
@@ -92,7 +86,6 @@ class NetGuardRequestListVC: BaseVC {
             navigationItem.titleView = searchController?.searchBar
         }
         definesPresentationContext = true
-        
         let buttonLeft = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
         buttonLeft.tintColor = .black
         let buttonRight = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(clearRequests))
@@ -103,7 +96,7 @@ class NetGuardRequestListVC: BaseVC {
         title = NSLocalizedString("NetGuard", comment: "")
     }
     
-    func openRequestDetailVC(model:RequestModel) {
+    private func openRequestDetailVC(model:RequestModel) {
         let vc = RequestDetailVC()
         vc.requestModel = model
         navigationController?.pushViewController(vc, animated: true)
@@ -125,8 +118,6 @@ extension NetGuardRequestListVC:UITableViewDataSource{
         cell.loadCell(model: cellModel)
         return cell
     }
-    
-    
 }
 
 extension NetGuardRequestListVC:UITableViewDelegate{

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class DetailTextCell: UITableViewCell {
+final class DetailTextCell: UITableViewCell {
     static let identifier = "IdentifierDetailTextCell"
-    
-    lazy var textViewDetail: UITextView = {
+    private static let readMoreLength = 300
+    private lazy var textViewDetail: UITextView = {
         let t = UITextView(forAutoLayout: true)
         t.textAlignment = .left
         t.font = .systemFont(ofSize: 14, weight: .regular)
@@ -22,12 +22,6 @@ class DetailTextCell: UITableViewCell {
         return t
     }()
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         backgroundColor = .clear
@@ -48,11 +42,18 @@ class DetailTextCell: UITableViewCell {
     }
     
     func loadcell(section:SectionModel) {
-        textViewDetail.attributedText = section.detail
+        if section.detail.length > DetailTextCell.readMoreLength {
+            let substr = section.detail.attributedSubstring(from: NSRange(location: 0, length: DetailTextCell.readMoreLength))
+            let mutableString = NSMutableAttributedString(attributedString: substr)
+            mutableString.append(NSAttributedString(string: "   \nTap to detail buton for show all details", attributes: [NSAttributedString.Key.foregroundColor : UIColor.generic, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15, weight: .semibold)]))
+            textViewDetail.attributedText = mutableString
+        } else {
+            let cleanStr = section.detail.string.replacingOccurrences(of: " \n", with: "")
+            textViewDetail.attributedText = cleanStr.count > 0 ? section.detail : NSAttributedString(string: NSLocalizedString("Empty", comment: ""))
+        }
     }
     
-
-    func adjustLayout(){
+    private func adjustLayout(){
         backgroundColor = .clear
         contentView.addSubview(textViewDetail)
         textViewDetail.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true

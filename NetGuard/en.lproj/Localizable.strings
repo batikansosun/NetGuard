@@ -11,9 +11,11 @@
 "Request HTTP Method " = "Request HTTP Method ";
 "Request URL " = "Request URL ";
 "Summary" = "Summary";
+"Empty" = "Empty";
 "Request Header Details" = "Request Header Details";
 "Request Body Details" = "Request Body Details";
 "Response Header Details" = "Response Header Details";
 "Response Body Details" = "Response Body Details";
 "Search request by url" = "Search request by url";
+"Search request by keyword" = "Search request by keyword";
 "NetGuard" = "NetGuard";

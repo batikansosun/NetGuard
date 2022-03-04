@@ -8,7 +8,7 @@
 import Foundation
 import  UIKit
 
-@objc private extension URLSessionConfiguration{
+@objc private extension URLSessionConfiguration {
     private static var isFirstTime = true
     static func netGuardEngineStarter(){
         guard isFirstTime else { return }
@@ -19,7 +19,7 @@ import  UIKit
         swizzleEphemeral()
     }
     
-    private static func swizzleProtocolSetter(){
+    private static func swizzleProtocolSetter() {
         let instance = URLSessionConfiguration.default
         
         let aClass: AnyClass = object_getClass(instance)!
@@ -33,7 +33,7 @@ import  UIKit
         method_exchangeImplementations(origMethod, newMethod)
     }
     
-    @objc private var protocolClasses_Swizzled: [AnyClass]?{
+    @objc private var protocolClasses_Swizzled: [AnyClass]? {
         get { return self.protocolClasses_Swizzled }
         set {
             guard let newTypes = newValue else { self.protocolClasses_Swizzled = nil; return }
@@ -49,7 +49,7 @@ import  UIKit
         }
     }
     
-    private static func swizzleDefault(){
+    private static func swizzleDefault() {
         let aClass: AnyClass = object_getClass(self)!
         let origSelector = #selector(getter: URLSessionConfiguration.default)
         let newSelector = #selector(getter: URLSessionConfiguration.default_swizzled)
@@ -58,7 +58,7 @@ import  UIKit
         method_exchangeImplementations(origMethod, newMethod)
     }
     
-    private static func swizzleEphemeral(){
+    private static func swizzleEphemeral() {
         let aClass: AnyClass = object_getClass(self)!
         let origSelector = #selector(getter: URLSessionConfiguration.ephemeral)
         let newSelector = #selector(getter: URLSessionConfiguration.ephemeral_swizzled)
@@ -67,7 +67,7 @@ import  UIKit
         method_exchangeImplementations(origMethod, newMethod)
     }
     
-    @objc private class var default_swizzled: URLSessionConfiguration{
+    @objc private class var default_swizzled: URLSessionConfiguration {
         get{
             let config = URLSessionConfiguration.default_swizzled
             config.protocolClasses?.insert(NetGuardHTTPProtocol.self, at: 0)
@@ -182,21 +182,25 @@ extension UIColor{
         return color
     }
     
-    static var successful:UIColor{
+    static var successful:UIColor {
         return UIColor(hexString: "#297E4C")
     }
-    static var redirection:UIColor{
+    static var redirection:UIColor {
         return UIColor(hexString: "#3D4140")
     }
-    static var clientError:UIColor{
+    static var clientError:UIColor {
         return UIColor(hexString: "#f60c0c")
     }
-    static var serverError:UIColor{
+    static var serverError:UIColor {
         return UIColor(hexString: "#D32C58")
     }
-    static var generic:UIColor{
+    static var generic:UIColor {
         return UIColor(hexString: "#999999")
     }
+    static var genericLightGray:UIColor {
+        return UIColor(hexString: "#f0efed")
+    }
+    
 }
 
 extension NSMutableAttributedString {
@@ -239,7 +243,7 @@ extension Dictionary {
 }
 
 extension String {
-    func characters(n: Int) -> String{
+    func characters(n: Int) -> String {
         return String(prefix(n))
     }
     
@@ -253,8 +257,8 @@ extension String {
     }
 }
 
-extension RequestModel{
-    var summary:NSMutableAttributedString{
+extension RequestModel {
+    var summary:NSMutableAttributedString {
         let final = NSMutableAttributedString()
         let request = self
         let url = NSMutableAttributedString().fontBold15(NSLocalizedString("Request URL ", comment: "")).font14(request.url + "\n")
@@ -262,12 +266,12 @@ extension RequestModel{
         let responseCode = NSMutableAttributedString().fontBold15(NSLocalizedString("Request HTTP Code ", comment: "")).font14((request.code != 0 ? "\(request.code)" : "-") + "\n")
         let requestStartTime = NSMutableAttributedString().fontBold15(NSLocalizedString("Request Start Time ", comment: "")).font14((request.date.getStrDate() ?? "-" + "\n") + "\n")
         let duration = NSMutableAttributedString().fontBold15(NSLocalizedString("Request Time Duration ", comment: "")).font14(request.duration?.formattedMilliseconds() ?? "-" + "\n")
-        for attrStr in [url, method, responseCode, requestStartTime, duration]{
+        for attrStr in [url, method, responseCode, requestStartTime, duration] {
             final.append(attrStr)
         }
         return final
     }
-    var responseHeaderAttrText:NSMutableAttributedString{
+    var responseHeaderAttrText:NSMutableAttributedString {
         let headerDictionary = self.responseHeaders ?? ["":""]
         let final = NSMutableAttributedString()
         for (key, value) in headerDictionary {
@@ -275,7 +279,7 @@ extension RequestModel{
         }
         return final
     }
-    var requestHeaderAttrText:NSMutableAttributedString{
+    var requestHeaderAttrText:NSMutableAttributedString {
         let headerDictionary = self.headers
         let final = NSMutableAttributedString()
         for (key, value) in headerDictionary {
@@ -283,28 +287,28 @@ extension RequestModel{
         }
         return final
     }
-    var exportRequestDetails:String{
+    var exportRequestDetails:String {
         let request = self
         return " \(SectionModelType.summary.description) \n  \(request.summary.string)  \n\n  \(SectionModelType.requestHeader.description) \n   \(request.requestHeaderAttrText.string) \n\n \(SectionModelType.requestBody.description) \n  \(request.httpBody.convertToStr)   \n\n   \(SectionModelType.responseHeader.description) \n  \(request.responseHeaderAttrText.string)  \n\n  \(SectionModelType.responseBody.description) \n  \(request.dataResponseAttrText) \n\n"
     }
     
-    var dataResponseAttrText:NSMutableAttributedString{
+    var dataResponseAttrText:NSMutableAttributedString {
         if let json = self.dataResponse?.prettyPrintedJSONString {
             return NSMutableAttributedString().font14(json)
         }
-        if let htmlOrPlainText = self.dataResponse?.printedNotValidJSONString{
+        if let htmlOrPlainText = self.dataResponse?.printedNotValidJSONString {
             return NSMutableAttributedString().font14(htmlOrPlainText)
         }
         return NSMutableAttributedString(string: "")
         
     }
-    var dataRequestAttrText:NSMutableAttributedString{
+    var dataRequestAttrText:NSMutableAttributedString {
         let text = NSMutableAttributedString().font14(self.httpBody?.prettyPrintedJSONString ?? "")
         return text
     }
 }
 
-extension Date{
+extension Date {
     func getStrDate() -> String?{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d yyyy - HH:mm:ss"
@@ -327,7 +331,7 @@ extension Data {
         guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
               let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
               let prettyPrintedString = String(data: data, encoding: .utf8) else { return nil }
-
+        
         return prettyPrintedString
     }
     
@@ -337,7 +341,7 @@ extension Data {
 }
 
 extension Double {
-    func formattedMilliseconds() -> String{
+    func formattedMilliseconds() -> String {
         
         let rounded = self
         if rounded < 1000 {

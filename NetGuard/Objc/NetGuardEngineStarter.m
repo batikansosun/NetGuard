@@ -8,10 +8,10 @@
 #import "NetGuardEngineStarter.h"
 
 @implementation NetGuardEngineStarter
-+ (void)load{
++ (void)load {
     NSString *methodName = @"netGuardEngineStarter";
     SEL implementNetGuardSelector = NSSelectorFromString(methodName);
-    if ([NSURLSessionConfiguration respondsToSelector:implementNetGuardSelector]){
+    if ([NSURLSessionConfiguration respondsToSelector:implementNetGuardSelector]) {
         [NSURLSessionConfiguration performSelector:implementNetGuardSelector];
     }
 }

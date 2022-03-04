@@ -7,11 +7,9 @@
 
 import UIKit
 
-class RequestListCell: UITableViewCell {
-    
+final class RequestListCell: UITableViewCell {
     static let identifier = "IdentifierRequestListCell"
-    
-    lazy var labelMethod: UILabel = {
+    private lazy var labelMethod: UILabel = {
         let l = UILabel(forAutoLayout: true)
         l.layer.borderWidth = 1
         l.layer.cornerRadius = 8
@@ -22,7 +20,7 @@ class RequestListCell: UITableViewCell {
         return l
     }()
     
-    lazy var labelHTTPCode: UILabel = {
+    private lazy var labelHTTPCode: UILabel = {
         let l = UILabel(forAutoLayout: true)
         l.layer.borderWidth = 1
         l.layer.cornerRadius = 8
@@ -33,7 +31,7 @@ class RequestListCell: UITableViewCell {
         return l
     }()
     
-    lazy var labelUrl: UILabel = {
+    private lazy var labelUrl: UILabel = {
         let l = UILabel(forAutoLayout: true)
         l.textAlignment = .left
         l.numberOfLines = 4
@@ -43,7 +41,7 @@ class RequestListCell: UITableViewCell {
         return l
     }()
     
-    lazy var labelDate: UILabel = {
+    private lazy var labelDate: UILabel = {
         let l = UILabel(forAutoLayout: true)
         l.textAlignment = .left
         l.numberOfLines = 2
@@ -52,17 +50,17 @@ class RequestListCell: UITableViewCell {
         return l
     }()
     
-    lazy var viewSeperator: UIView = {
+    private lazy var viewSeperator: UIView = {
         let v = UIView(autoLayout: true)
         v.backgroundColor = UIColor.lightGray
         return v
     }()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         backgroundColor = .clear
@@ -78,7 +76,7 @@ class RequestListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func adjustLayout(){
+    private func adjustLayout(){
         accessoryType = .disclosureIndicator
         backgroundColor = .clear
         contentView.addSubview(labelUrl)
@@ -114,10 +112,9 @@ class RequestListCell: UITableViewCell {
         let separatorHeight = CGFloat(1.0)
         let additionalSeparator = UIView.init(frame: CGRect(x: 0, y: self.frame.size.height-separatorHeight + 6 , width: screenSize.width, height: separatorHeight))
         additionalSeparator.backgroundColor = UIColor.lightGray
-       // self.addSubview(additionalSeparator)
     }
     
-    func loadCell(model:RequestModel){
+    func loadCell(model:RequestModel) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY/MM/dd HH:mm:ss"
         if let url = URL(string: model.url){
