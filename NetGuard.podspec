@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "10.0"
   s.source       = { :git => "https://github.com/batikansosun/NetGuard.git", :branch => "main", :tag => "#{s.version}" }
   s.source_files     = "NetGuard", "NetGuard/**/*.{h,m,swift}"
-  s.resources = "NetGuard", "NetGuard/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.resource_bundles = { "NetGuard" => ["NetGuard/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"] }
   s.swift_version = "5.0"
 end
