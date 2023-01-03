@@ -87,9 +87,9 @@ final class NetGuardRequestListVC: BaseVC {
         }
         definesPresentationContext = true
         let buttonLeft = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
-        buttonLeft.tintColor = .black
+        buttonLeft.tintColor = lightModeColor | darkModeColor
         let buttonRight = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(clearRequests))
-        buttonRight.tintColor = .black
+        buttonRight.tintColor = lightModeColor | darkModeColor
         navigationItem.rightBarButtonItem = buttonLeft
         navigationItem.leftBarButtonItem = buttonRight
         navigationController?.navigationBar.tintColor = .generic

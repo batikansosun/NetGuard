@@ -7,6 +7,9 @@
 
 import UIKit
 
+let lightModeColor = UIColor.black
+let darkModeColor = UIColor.white
+
 class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()

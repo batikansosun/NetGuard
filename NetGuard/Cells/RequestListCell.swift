@@ -16,7 +16,7 @@ final class RequestListCell: UITableViewCell {
         l.layer.masksToBounds = true
         l.textAlignment = .center
         l.font = .systemFont(ofSize: 14, weight: .bold)
-        l.textColor = .black
+        l.textColor = lightModeColor | darkModeColor
         return l
     }()
     
@@ -27,7 +27,7 @@ final class RequestListCell: UITableViewCell {
         l.layer.masksToBounds = true
         l.textAlignment = .center
         l.font = .systemFont(ofSize: 14, weight: .bold)
-        l.textColor = .black
+        l.textColor = lightModeColor | darkModeColor
         return l
     }()
     
@@ -37,7 +37,7 @@ final class RequestListCell: UITableViewCell {
         l.numberOfLines = 4
         l.lineBreakMode = .byCharWrapping
         l.font = .systemFont(ofSize: 14, weight: .regular)
-        l.textColor = .black
+        l.textColor = lightModeColor | darkModeColor
         return l
     }()
     

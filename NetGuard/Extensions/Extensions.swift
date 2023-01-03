@@ -205,21 +205,21 @@ extension UIColor{
 
 extension NSMutableAttributedString {
     @discardableResult func fontBold15(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 15)]
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor:lightModeColor | darkModeColor]
         let boldString = NSMutableAttributedString(string:text, attributes: attrs)
         append(boldString)
         return self
     }
     
     @discardableResult func fontBoldGray15(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor:UIColor.lightGray]
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 15), .foregroundColor:lightModeColor | darkModeColor]
         let boldString = NSMutableAttributedString(string:text, attributes: attrs)
         append(boldString)
         return self
     }
     
     @discardableResult func font14(_ text: String) -> NSMutableAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 14)]
+        let attrs: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 14), .foregroundColor:lightModeColor | darkModeColor]
         let normal = NSMutableAttributedString(string:text, attributes: attrs)
         append(normal)
         return self
@@ -367,6 +367,17 @@ extension Double {
             let minutes = (rounded - days * 24 * 60 * 60 * 1000 - hours * 60 * 60 * 1000) / 1000 / 60
             let seconds = (rounded - days * 24 * 60 * 60 * 1000 - hours * 60 * 60 * 1000 - minutes * 60 * 1000) / 1000
             return "\(Int(days))d \(Int(hours))h \(Int(minutes))m \(Int(seconds))s"
+        }
+    }
+}
+
+infix operator |: AdditionPrecedence
+extension UIColor {
+    static func | (lightMode: UIColor, darkMode: UIColor) -> UIColor {
+        guard #available(iOS 13.0, *) else { return lightMode }
+            
+        return UIColor { (traitCollection) -> UIColor in
+            return traitCollection.userInterfaceStyle == .light ? lightMode : darkMode
         }
     }
 }

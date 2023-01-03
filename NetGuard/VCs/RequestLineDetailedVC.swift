@@ -41,6 +41,7 @@ final class RequestLineDetailedVC: BaseVC {
     }
     
     private func adjustLayout(){
+        view.backgroundColor =  darkModeColor | lightModeColor
         view.addSubview(textViewDetail)
         textViewDetail.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         textViewDetail.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
@@ -53,14 +54,14 @@ final class RequestLineDetailedVC: BaseVC {
         searchController?.searchResultsUpdater = self
         searchController?.obscuresBackgroundDuringPresentation = false
         searchController?.searchBar.placeholder = NSLocalizedString("Search request by keyword", comment: "")
-        searchController?.searchBar.tintColor = .black
+        searchController?.searchBar.tintColor =  lightModeColor | darkModeColor
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {
             navigationItem.titleView = searchController?.searchBar
         }
         definesPresentationContext = true
-        navigationController?.navigationBar.tintColor = .generic
+        navigationController?.navigationBar.tintColor =  lightModeColor | darkModeColor
         title = NSLocalizedString("NetGuard", comment: "")
     }
     
